@@ -8,78 +8,79 @@ import gpxpy
 @dataclass
 class Activity:
 
-    activity_id: Optional[int]
-    activity_date: Optional[date]
-    activity_name: Optional[str]
-    activity_type: Optional[str]
-    activity_description: Optional[str]
-    elapsed_time: Optional[int]
-    distance: Optional[float]
-    relative_effort: Optional[int]
-    commute: Optional[bool]
-    activity_gear: Optional[str]
-    filename: Optional[str]  # TODO: should this be pathlib.Path type?
-    athlete_weight: Optional[float]
-    bike_weight: Optional[float]
-    _elapsed_time: Optional[int]  # duplicated in CSV source
-    moving_time: Optional[int]
-    distance: Optional[float]
-    max_speed: Optional[float]
-    average_speed: Optional[float]
-    elevation_gain: Optional[float]
-    elevation_loss: Optional[float]
-    elevation_low: Optional[float]
-    elevation_high: Optional[float]
-    max_grade: Optional[float]
-    average_grade: Optional[float]
-    average_positive_grade: Optional[float]
-    average_negative_grade: Optional[float]
-    average_cadence: Optional[float]
-    max_cadence: Optional[float]
-    max_heart_rate: Optional[int]
-    average_heart_rate: Optional[float]
-    max_watts: Optional[int]  # TODO: double-check type
-    average_watts: Optional[float]
-    calories: Optional[float]
-    max_temperature: Optional[int]
-    average_temperature: Optional[float]
-    _relative_effort: Optional[int]  # duplicated in CSV source
-    total_work: Optional[int]  # TODO: double-check type
-    number_of_runs: Optional[int]
-    uphill_time: Optional[int]
-    downhill_time: Optional[int]
-    other_time: Optional[int]
-    perceived_exertion: Optional[int]
-    weighted_average_power: Optional[float]
-    power_count: Optional[int]
-    prefer_perceived_exertion: Optional[int]
-    perceived_relative_effort: Optional[int]
-    commute: Optional[bool]
-    total_weight_lifted: Optional[int]
-    from_upload: Optional[bool]
-    grade_adjusted_distance: Optional[float]
-    weather_observation_time: Optional[datetime]
-    weather_condition: Optional[str]  # TODO: double-check type
-    weather_temperature: Optional[int]  # TODO: double-check type
-    apparent_temperature: Optional[int]  # TODO: double-check type
-    dewpoint: Optional[int]  # TODO: double-check type
-    humidity: Optional[float]  # TODO: double-check type
-    weather_pressure: Optional[float]  # TODO: double-check type
-    wind_speed: Optional[float]  # TODO: double-check type
-    wind_gust: Optional[float]  # TODO: double-check type
-    wind_bearing: Optional[float]  # TODO: double-check type
-    precipitation_intensity: Optional[int]  # TODO: double-check type
-    sunrise_time: Optional[datetime]  # TODO: double-check type
-    sunset_time: Optional[datetime]  # TODO: double-check type
-    moon_phase: Optional[str]  # TODO: double-check type
-    bike: Optional[int]
-    gear: Optional[int]
-    precipitation_probability: Optional[float]  # TODO: double-check type
-    precipitation_type: Optional[int]  # TODO: double-check type
-    cloud_cover: Optional[int]  # TODO: double-check type
-    weather_visibility: Optional[int]  # TODO: double-check type
-    uv_index: Optional[int]  # TODO: double-check type
-    weather_ozone: Optional[int]  # TODO: double-check type
+    activity_id: Optional[int] = None
+    activity_date: Optional[date] = None
+    activity_name: Optional[str] = None
+    activity_type: Optional[str] = None
+    activity_description: Optional[str] = None
+    elapsed_time: Optional[int] = None
+    distance: Optional[float] = None
+    relative_effort: Optional[int] = None
+    commute: Optional[bool] = None
+    activity_gear: Optional[str] = None
+    filename: Optional[str] = None  # TODO: should this be pathlib.Path type?
+    athlete_weight: Optional[float] = None
+    bike_weight: Optional[float] = None
+    _elapsed_time: Optional[int] = None  # duplicated in CSV source
+    moving_time: Optional[int] = None
+    distance: Optional[float] = None
+    max_speed: Optional[float] = None
+    average_speed: Optional[float] = None
+    elevation_gain: Optional[float] = None
+    elevation_loss: Optional[float] = None
+    elevation_low: Optional[float] = None
+    elevation_high: Optional[float] = None
+    max_grade: Optional[float] = None
+    average_grade: Optional[float] = None
+    average_positive_grade: Optional[float] = None
+    average_negative_grade: Optional[float] = None
+    average_cadence: Optional[float] = None
+    max_cadence: Optional[float] = None
+    max_heart_rate: Optional[int] = None
+    average_heart_rate: Optional[float] = None
+    max_watts: Optional[int] = None  # TODO: double-check type
+    average_watts: Optional[float] = None
+    calories: Optional[float] = None
+    max_temperature: Optional[int] = None
+    average_temperature: Optional[float] = None
+    _relative_effort: Optional[int] = None  # duplicated in CSV source
+    total_work: Optional[int] = None  # TODO: double-check type
+    number_of_runs: Optional[int] = None
+    uphill_time: Optional[int] = None
+    downhill_time: Optional[int] = None
+    other_time: Optional[int] = None
+    perceived_exertion: Optional[int] = None
+    weighted_average_power: Optional[float] = None
+    power_count: Optional[int] = None
+    prefer_perceived_exertion: Optional[int] = None
+    perceived_relative_effort: Optional[int] = None
+    commute: Optional[bool] = None
+    total_weight_lifted: Optional[int] = None
+    from_upload: Optional[bool] = None
+    grade_adjusted_distance: Optional[float] = None
+    weather_observation_time: Optional[datetime] = None
+    weather_condition: Optional[str] = None  # TODO: double-check type
+    weather_temperature: Optional[int] = None  # TODO: double-check type
+    apparent_temperature: Optional[int] = None  # TODO: double-check type
+    dewpoint: Optional[int] = None  # TODO: double-check type
+    humidity: Optional[float] = None  # TODO: double-check type
+    weather_pressure: Optional[float] = None  # TODO: double-check type
+    wind_speed: Optional[float] = None  # TODO: double-check type
+    wind_gust: Optional[float] = None  # TODO: double-check type
+    wind_bearing: Optional[float] = None  # TODO: double-check type
+    precipitation_intensity: Optional[int] = None  # TODO: double-check type
+    sunrise_time: Optional[datetime] = None  # TODO: double-check type
+    sunset_time: Optional[datetime] = None  # TODO: double-check type
+    moon_phase: Optional[str] = None  # TODO: double-check type
+    bike: Optional[int] = None
+    gear: Optional[int] = None
+    # TODO: double-check type
+    precipitation_probability: Optional[float] = None
+    precipitation_type: Optional[int] = None  # TODO: double-check type
+    cloud_cover: Optional[int] = None  # TODO: double-check type
+    weather_visibility: Optional[int] = None  # TODO: double-check type
+    uv_index: Optional[int] = None  # TODO: double-check type
+    weather_ozone: Optional[int] = None  # TODO: double-check type
 
     @property
     def gpx(self):
